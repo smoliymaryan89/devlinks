@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-const env = (name: string, defaultValue: string): string => {
+const env = (name: string, defaultValue?: string): string => {
   const value = process.env[name];
 
   if (value) return value;
