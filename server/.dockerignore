@@ -1,0 +1,15 @@
+node_modules
+build
+dist
+.DS_Store
+Thumbs.db
+docker-compose.yml
+Dockerfile
+Dockerfile.dev
+.env
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+src/db/mongo-data
+.git
