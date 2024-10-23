@@ -1,0 +1,33 @@
+@use "../../scss/utils/functions" as *;
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/variables" as var;
+
+.toast {
+  max-width: 406px;
+  width: 100%;
+  background-color: get-color("dark-grey");
+  border-radius: var.$border-radius-xl;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+  padding: 16px 24px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > svg {
+      fill: get-color("white");
+    }
+
+    > p {
+      font-weight: 600;
+      color: get-color("white");
+
+      @include mx.font-size(14, 16);
+
+      @include mx.breakpoint(tablet) {
+        @include mx.font-size(16, 18);
+      }
+    }
+  }
+}

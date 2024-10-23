@@ -1,0 +1,32 @@
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/functions" as *;
+
+.icon {
+  @include mx.flex-center-vert;
+  gap: 6px;
+
+  &.isAuth {
+    margin-bottom: 67px;
+
+    @include mx.breakpoint(tablet) {
+      margin-bottom: 51px;
+      justify-content: center;
+    }
+  }
+
+  > p {
+    font-weight: 700;
+    color: get-color("dark-grey");
+    @include mx.font-size(32);
+
+    &.isNotAuth {
+      @include mx.breakpoint(mobile) {
+        display: none;
+      }
+
+      @include mx.breakpoint(tablet) {
+        @include mx.font-size(24);
+      }
+    }
+  }
+}

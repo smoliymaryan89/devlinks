@@ -1,0 +1,37 @@
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/functions" as *;
+
+.form {
+  margin-bottom: 24px;
+
+  > div {
+    position: relative;
+    margin-bottom: 24px;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+
+  > p {
+    color: get-color("red");
+
+    @include mx.font-size(12, 18);
+  }
+
+  @include mx.breakpoint(tablet) {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+.wrapper {
+  margin-bottom: 0;
+}
+
+.text {
+  @include mx.font-size(12, 18);
+  margin-bottom: 24px;
+}
