@@ -1,0 +1,31 @@
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/functions" as *;
+@use "../../scss/utils/variables" as var;
+
+.container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include mx.breakpoint(mobile) {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 375px;
+  }
+
+  @include mx.breakpoint(tablet) {
+    height: 100vh;
+
+    @include mx.flex-center-horiz;
+    flex-direction: column;
+  }
+}
+
+.wrapper {
+  @include mx.breakpoint(tablet) {
+    background-color: get-color("white");
+    padding: 40px;
+    border-radius: var.$border-radius-xl;
+    width: 476px;
+    margin: 0 auto;
+  }
+}

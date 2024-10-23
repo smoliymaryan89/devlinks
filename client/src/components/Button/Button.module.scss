@@ -1,0 +1,57 @@
+@use "../../scss/utils/functions" as *;
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/variables" as var;
+
+.btn {
+  @include mx.flex-center;
+
+  width: 100%;
+  padding: 11px 0px;
+  color: get-color("white");
+  border-radius: var.$border-radius-md;
+  font-weight: 600;
+  transition: background-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  cursor: pointer;
+
+  &.primary {
+    background-color: get-color("purple");
+
+    &:disabled {
+      background-color: get-color("purple");
+      opacity: 0.25;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: get-color("purple");
+        opacity: 0.25;
+        box-shadow: none;
+      }
+    }
+
+    &:hover {
+      background-color: get-color("purple-hover");
+      box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+    }
+  }
+
+  &.secondary {
+    padding: 10px 0px;
+    background-color: transparent;
+    border: 1px solid get-color("purple");
+    color: get-color("purple");
+
+    &:disabled {
+      color: get-color("purple");
+      opacity: 0.25;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &:hover {
+      background-color: get-color("purple-light");
+    }
+  }
+}

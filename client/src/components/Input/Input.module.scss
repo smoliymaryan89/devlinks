@@ -1,0 +1,59 @@
+@use "../../scss/utils/functions" as *;
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/variables" as var;
+
+.wrapper {
+  margin-bottom: 24px;
+}
+
+.label {
+  margin-bottom: 4px;
+  color: get-color("dark-grey");
+
+  @include mx.font-size(12, 18);
+
+  &.error {
+    color: get-color("red");
+  }
+}
+
+.input {
+  position: relative;
+
+  > svg {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    fill: get-color("grey");
+  }
+
+  > input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border-radius: var.$border-radius-md;
+    border: 1px solid get-color("border");
+    color: get-color("dark-grey");
+    transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: get-color("purple");
+      box-shadow: 0px 0px 32px 0px rgba(99, 60, 255, 0.25);
+    }
+
+    &::placeholder {
+      opacity: 0.5;
+      color: get-color("dark-grey");
+    }
+
+    &.error {
+      border-color: get-color("red");
+      box-shadow: none;
+      transition: border-color 0ms ease-in-out;
+
+      &:focus {
+        border-color: get-color("red");
+      }
+    }
+  }
+}

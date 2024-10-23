@@ -1,0 +1,17 @@
+@use "../../scss/utils/mixins" as mx;
+@use "../../scss/utils/functions" as *;
+
+.title {
+  color: get-color("dark-grey");
+  font-weight: 700;
+  @include mx.font-size(24, 36);
+  margin-bottom: 8px;
+
+  @include mx.breakpoint(tablet) {
+    @include mx.font-size(32, 48);
+  }
+}
+
+.text {
+  margin-bottom: 40px;
+}

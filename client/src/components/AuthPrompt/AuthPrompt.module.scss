@@ -1,0 +1,24 @@
+@use "../../scss/utils/functions" as *;
+@use "../../scss/utils/mixins" as mx;
+
+.wrapper {
+  @include mx.flex-center;
+  flex-direction: column;
+
+  > p {
+    text-align: center;
+  }
+
+  > a {
+    color: get-color("purple");
+    transition: color 300ms ease-in-out;
+    &:hover {
+      color: get-color("purple-hover");
+    }
+  }
+
+  @include mx.breakpoint(tablet) {
+    flex-direction: row;
+    gap: 4px;
+  }
+}
