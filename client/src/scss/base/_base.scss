@@ -1,0 +1,8 @@
+@use "../utils/functions" as *;
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+  background-color: get-color("light-grey");
+  color: get-color("grey");
+  line-height: 1.5;
+}
