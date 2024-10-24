@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-      - client-dev
-      - server-dev
     paths-ignore:
       - ".github/**"
+      - "README.md"
   pull_request:
     branches:
       - main
     paths-ignore:
       - ".github/**"
+      - "README.md"
     types: [opened, synchronize]
 
 jobs:
