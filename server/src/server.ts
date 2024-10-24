@@ -6,6 +6,7 @@ import env from "./utils/env";
 import { CustomError } from "./types/error";
 
 import authRouter from "./routers/api/auth-router";
+import linkRouter from "./routers/api/link-router";
 
 const PORT = env("PORT", "3000");
 
@@ -24,6 +25,7 @@ const startServer = () => {
   );
 
   app.use("/api/auth", authRouter);
+  app.use("/api/links", linkRouter);
 
   app.use("*", (req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({
